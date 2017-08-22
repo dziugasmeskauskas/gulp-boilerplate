@@ -1,10 +1,12 @@
 # Gulp boilerplate
-- Sass
+- SASS
 - ES6 (Babel)
-- Uglidy JavaScript
+- Uglify JavaScript
 - Browsersync
-- Minify css
-- Delete not used css rules
+- Minify CSS
+- Delete not used CSS rules
+- Autoprefix CSS
+- Image optimization
 
 # Set up
 
