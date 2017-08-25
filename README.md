@@ -19,3 +19,9 @@
 - `yarn install`
 - `gulp` for development
 - `gulp build` for distribution
+
+## To do 
+
+- Add broserify
+- Add Cache bust
+- Update gulpfile
