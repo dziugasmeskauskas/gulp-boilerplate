@@ -12,6 +12,7 @@ const runSequence = require('run-sequence');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const uncss = require('gulp-uncss');
+const browserify = require('gulp-browserify');
 
 
 //Sass and babel
@@ -35,6 +36,10 @@ gulp.task('babel', function(){
   return gulp.src('app/babel/*.js')
     .pipe(babel({
         presets: ['env']
+    }))
+    .pipe(browserify({
+      insertGlobals : true,
+      debug : !gulp.env.production
     }))
     .pipe(gulp.dest('app/js'))
 });

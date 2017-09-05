@@ -7,11 +7,11 @@
 - Delete not used CSS rules
 - Autoprefix CSS
 - Image optimization
+- Browserify
 
 # Set up
 
-## Requirements 
-
+## Requirements  
 - Gulp `npm install gulp -g`
 
 ## Instalation 
@@ -22,6 +22,5 @@
 
 ## To do 
 
-- Add broserify
 - Add Cache bust
 - Update gulpfile
