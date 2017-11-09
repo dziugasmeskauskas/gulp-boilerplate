@@ -19,9 +19,10 @@ const browserify = require('gulp-browserify');
 gulp.task('sass', function(){
   return gulp.src('app/scss/app.scss')
     .pipe(sass()) 
-    .pipe(uncss({
-      html: ['app/*.html']
-    }))
+    .on('error', swallowError)    
+    // .pipe(uncss({
+    //   html: ['app/*.html']
+    // }))
     .pipe(autoprefixer({
       browsers: ['last 5 versions'],
       cascade: false
@@ -37,6 +38,7 @@ gulp.task('babel', function(){
     .pipe(babel({
         presets: ['env']
     }))
+    .on('error', swallowError)    
     .pipe(browserify({
       insertGlobals : true,
       debug : !gulp.env.production
@@ -107,3 +109,8 @@ gulp.task('default', function (callback) {
     callback
   )
 })
+
+function swallowError (error) {
+    console.log(error.toString())
+    this.emit('end')
+  }
